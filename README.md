@@ -1,7 +1,8 @@
 # LearningAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
-This is intended for me to just have some exposure to Angular, currently I am not trying to go in depth and become an expert.
+> This is intended for me to just have some exposure to Angular, currently I am not trying to go in depth and become an expert.
+- [Angular tutorial I followed](https://angular.io/tutorial)
 ---
 ## Development server
 
