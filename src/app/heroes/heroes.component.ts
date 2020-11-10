@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../Hero';
-import { HEROES } from '../mock-heroes';
+import { HeroService } from '../Hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -9,17 +9,22 @@ import { HEROES } from '../mock-heroes';
   styleUrls: ['./heroes.component.scss'],
 })
 export class HeroesComponent implements OnInit {
-  constructor() { }
+  constructor(private heroService: HeroService) {}
 
-  heroes = HEROES;
-  
+  heroes: Hero[];
+
   selectedHero: Hero;
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+  }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
 
   ngOnInit(): void {
+    this.getHeroes();
   }
-
 }
